@@ -589,5 +589,5 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
 
 /* උදාහරණයක් ලෙස: */
 body {
-    padding-top: 100px; /* Header එකේ උසට සමාන වන සේ මෙම අගය වෙනස් කරන්න */
+    padding-top: 80px; /* Header එකේ උසට සමාන වන සේ මෙම අගය වෙනස් කරන්න */
 }
