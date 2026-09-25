@@ -496,7 +496,7 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
   .riu-btn {
     display: inline-block;
     width: auto;         /* සම්පූර්ණ පළල වෙනුවට ටෙක්ස්ට් එකට පමණක් සීමා වේ */
-    min-width: 250px;    /* අවම පළල */
+    min-width: 200px;    /* අවම පළල */
     background: linear-gradient(90deg, #0e2d1b 0%, #194228 50%, #1c6736 100%); /* වෙබ් අඩවියේ ඇති Deep Natural Green ග්‍රේඩියන්ට් වර්ණය */
     color: #ffffff;
     text-align: center;
