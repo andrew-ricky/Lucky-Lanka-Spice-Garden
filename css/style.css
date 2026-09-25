@@ -74,25 +74,34 @@ nav a:hover, nav a.active {
   background: rgba(255, 255, 255, 0.08);
 }
 
-/* Shopping Cart Icon Styling */
-.cart-icon-btn {
+/* --- ඩෙස්ක්ටොප් සහ ලැප්ටොප් තිරවලදී Cart සහ Login එකම පේළියක පෙන්වීමට (Global / Default) --- */
+.nav-actions-row {
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+/* 1. Cart බටන් එක සඳහා සැකසුම */
+header nav .cart-icon-btn {
   position: relative;
   font-size: 1.1rem;
   color: var(--accent) !important;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.4rem 1.2rem !important;
-  background: rgba(255, 215, 0, 0.1);
-  border-radius: 20px !important;
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 0.4rem 1rem !important;
+  background: rgba(255, 215, 0, 0.15);
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  border-radius: 8px !important;
   transition: all 0.3s ease;
   width: auto !important;
   text-decoration: none;
 }
 
 .cart-icon-btn:hover {
-  background: rgba(255, 215, 0, 0.25) !important;
-  transform: scale(1.05);
+  background: rgba(255, 215, 0, 0.3) !important;
+  transform: translateY(-2px);
 }
 
 .cart-badge {
@@ -109,6 +118,32 @@ nav a:hover, nav a.active {
 .cart-badge:empty,
 .cart-badge[data-count="0"] {
   display: none;
+}
+
+/* 2. Login බටන් එක text එකට ගැලපෙන ලෙස (auto width) සැකසීම */
+header nav .nav-login-btn {
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: auto !important;             
+  min-width: 90px !important;         
+  padding: 0.4rem 1rem !important;   
+  margin: 0 !important;
+  font-size: 0.9rem !important;       
+  font-weight: 700 !important;
+  border-radius: 8px !important;
+  background: rgba(255, 215, 0, 0.15);
+  color: var(--accent) !important;
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  text-decoration: none;
+  box-sizing: border-box;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+header nav .nav-login-btn:hover {
+  background: rgba(255, 215, 0, 0.3) !important;
+  transform: translateY(-2px);
 }
 
 /* Hero Section */
@@ -474,7 +509,7 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
     font-size: 0.88rem !important;
   }
 
-  /* --- Cart සහ Login බටන් එකම පේළියක මධ්‍යගතව පෙන්වීමට සැකසුම --- */
+  /* Mobile මෙනුව ඇතුළේ Cart සහ Login එකම පේළියක මධ්‍යගතව තැබීම */
   .nav-actions-row {
     display: flex !important;
     justify-content: center !important;
@@ -484,49 +519,10 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
     margin: 4px auto !important;
   }
 
-  /* 1. Mobile එකේ Cart බටන් එක සඳහා සැකසුම */
-  header nav .cart-icon-btn {
-    display: inline-flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    width: 48% !important;
-    max-width: 160px !important;
-    padding: 0.45rem 0.5rem !important;
-    margin: 0 !important;
-    font-size: 0.88rem !important;
-    font-weight: 700 !important;
-    border-radius: 8px !important;
-    background: rgba(255, 215, 0, 0.15);
-    color: var(--accent) !important;
-    border: 1px solid rgba(255, 215, 0, 0.4);
-    text-decoration: none;
-    box-sizing: border-box;
-  }
-
-  /* 2. Mobile එකේ Login බටන් එක text එකට ගැලපෙන ලෙස (auto width) සැකසීම */
+  header nav .cart-icon-btn,
   header nav .nav-login-btn {
-    display: inline-flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    width: auto !important;             
-    min-width: 90px !important;         
-    padding: 0.45rem 0.8rem !important;   
-    margin: 0 !important;
-    font-size: 0.9rem !important;       
-    font-weight: 700 !important;
-    border-radius: 8px !important;
-    background: rgba(255, 215, 0, 0.15);
-    color: var(--accent) !important;
-    border: 1px solid rgba(255, 215, 0, 0.4);
-    text-decoration: none;
-    box-sizing: border-box;
-    text-align: center;
-  }
-
-  header nav .cart-icon-btn:hover,
-  header nav .nav-login-btn:hover {
-    background: rgba(255, 215, 0, 0.3) !important;
-    transform: translateY(-2px);
+    width: auto !important;
+    flex: 1 !important;
   }
 
   /* අනෙකුත් මෝබයිල් කන්ටේනර් සැකසුම් */
