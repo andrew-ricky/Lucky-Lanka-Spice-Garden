@@ -28,8 +28,10 @@ header {
   backdrop-filter: blur(10px);
   color: var(--white);
   padding: 1rem 1.5rem;
-  position: sticky;
+  position: fixed; /* Scroll කළත් උඩම ස්ථාවරව තිබීමට fixed කරන ලදී */
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
   box-shadow: 0 4px 20px rgba(0,0,0,0.15);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -152,6 +154,7 @@ header nav .nav-login-btn:hover {
   height: 55vh;
   min-height: 420px;
   overflow: hidden;
+  margin-top: 70px; /* Fixed header එක යටින් content නොවැසීමට ඉඩ ලබා දීම */
 }
 
 .hero-bg {
