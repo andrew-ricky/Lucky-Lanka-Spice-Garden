@@ -474,38 +474,41 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
     font-size: 0.88rem !important;
   }
 
-  /* --- Cart සහ Login බටන් එක ළඟ එකම පේළියක පෙන්වීමට CSS සැකසුම --- */
+  /* --- Cart සහ Login බටන් එකම ප්‍රමාණයට සහ මධ්‍යගතව පෙන්වීමට CSS සැකසුම --- */
   .nav-actions-row {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
     width: 85% !important;
-    margin: 2px auto !important;
+    margin: 4px auto !important;
   }
 
-  /* Cart බටන් එක සහ Login බටන් එකට එකම හැඩය ලබා දීම */
+  /* බොත්තම් දෙකටම එකම පළලක් (width) සහ එකම පෙනුමක් ලබා දීම */
   header nav .cart-icon-btn,
   header nav .nav-login-btn {
     display: inline-flex !important;
     justify-content: center !important;
     align-items: center !important;
     width: 48% !important;
-    padding: 0.35rem 0.5rem !important;
+    max-width: 140px !important;
+    padding: 0.45rem 0.5rem !important;
     margin: 0 !important;
-    font-size: 0.85rem !important;
-    border-radius: 20px !important;
-    background: rgba(255, 215, 0, 0.1);
+    font-size: 0.88rem !important;
+    font-weight: 700 !important;
+    border-radius: 8px !important;
+    background: rgba(255, 215, 0, 0.15);
     color: var(--accent) !important;
-    border: 1px solid rgba(255, 215, 0, 0.3);
+    border: 1px solid rgba(255, 215, 0, 0.4);
     text-decoration: none;
     box-sizing: border-box;
+    text-align: center;
   }
 
   header nav .cart-icon-btn:hover,
   header nav .nav-login-btn:hover {
-    background: rgba(255, 215, 0, 0.25) !important;
-    transform: scale(1.02);
+    background: rgba(255, 215, 0, 0.3) !important;
+    transform: translateY(-2px);
   }
 
   /* ඩෙස්ක්ටොප් තිර සඳහා බොත්තම සඟවා තබයි */
