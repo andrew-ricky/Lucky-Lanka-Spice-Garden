@@ -482,8 +482,12 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
 @media screen and (max-width: 768px) {
   .riu-btn-container {
     display: block;
+    position: fixed;
+    bottom: 50px; /* දුරකථනයේ නැවිගේශන් බටන් මතට වැසී යාම වැළැක්වීමට යටින් ඉඩ තබා ඇත */
+    left: 0;
     width: 100%;
-    padding: 12px 16px;
+    z-index: 9999;
+    padding: 0 15px;
     background: transparent;
     text-align: center;
   }
@@ -494,12 +498,17 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
     background-color: #E63946; /* රතු පාට වර්ණය */
     color: #ffffff;
     text-align: center;
-    padding: 15px 0;
-    font-size: 1.15rem;
+    padding: 14px 0;
+    font-size: 1.1rem;
     font-weight: 700;
     text-decoration: none;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(230, 57, 70, 0.35);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  /* පිටුවේ අන්තර්ගතය බොත්තමට යට වීම වැළැක්වීමට පහළින් ඉඩ තැබීම */
+  body {
+    padding-bottom: 90px;
   }
 }
 
