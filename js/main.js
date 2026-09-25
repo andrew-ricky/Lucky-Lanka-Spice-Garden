@@ -217,3 +217,40 @@ async function proceedToCheckout() {
     }
   }
 }
+
+// --- Mobile Hamburger Menu Toggle Functionality ---
+document.addEventListener('DOMContentLoaded', () => {
+  const mobileMenuToggle = document.getElementById('mobile-menu');
+  const navMenu = document.querySelector('header nav');
+
+  if (mobileMenuToggle && navMenu) {
+    mobileMenuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      
+      // Icon එක Bars වල සිට Close (X) සලකුණට මාරු කිරීම සඳහා
+      const icon = mobileMenuToggle.querySelector('i');
+      if (icon) {
+        if (navMenu.classList.contains('active')) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
+        } else {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      }
+    });
+
+    // මෙනු එකේ ඕනෑම ලිංක් එකක් ක්ලික් කළ විට මෙනු එක නැවත Closed වීම
+    const navLinks = navMenu.querySelectorAll('a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        const icon = mobileMenuToggle.querySelector('i');
+        if (icon) {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      });
+    });
+  }
+});
