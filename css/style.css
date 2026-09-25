@@ -481,34 +481,28 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
 /* ජංගම දුරකථන තිර සඳහා පමණක් (තිරයේ පළල 768px හෝ අඩු නම්) */
 @media screen and (max-width: 768px) {
   .riu-btn-container {
-    display: block;
-    position: fixed;
-    bottom: 50px; /* දුරකථනයේ නැවිගේශන් බටන් මතට වැසී යාම වැළැක්වීමට යටින් ඉඩ තබා ඇත */
-    left: 0;
-    width: 100%;
-    z-index: 9999;
+    display: flex;
+    justify-content: center; /* බොත්තම තිරයේ මැදට ගැනීමට */
+    position: relative;
+    margin-top: 25px;    /* උඩින් ඇති ඉඩ වැඩි කර බොත්තම තව ටිකක් පහළට ගෙන යාමට */
+    margin-bottom: 25px; /* යටින් ඉඩ තබා ගැනීමට */
     padding: 0 15px;
     background: transparent;
-    text-align: center;
   }
 
   .riu-btn {
-    display: block;
-    width: 100%;
+    display: inline-block;
+    width: auto;         /* සම්පූර්ණ පළල වෙනුවට ටෙක්ස්ට් එකට පමණක් ගැළපීමට */
+    min-width: 140px;    /* අවම පළල */
     background-color: #E63946; /* රතු පාට වර්ණය */
     color: #ffffff;
     text-align: center;
-    padding: 14px 0;
-    font-size: 1.1rem;
+    padding: 10px 24px;  /* බොත්තමේ උස සහ පළල පාලනය කිරීමට */
+    font-size: 0.95rem;  /* අකුරු ප්‍රමාණය කුඩා කිරීමට */
     font-weight: 700;
     text-decoration: none;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  }
-
-  /* පිටුවේ අන්තර්ගතය බොත්තමට යට වීම වැළැක්වීමට පහළින් ඉඩ තැබීම */
-  body {
-    padding-bottom: 70px;
+    border-radius: 6px;  /* වටකුරු හැඩය */
+    box-shadow: 0 4px 10px rgba(230, 57, 70, 0.3);
   }
 }
 
