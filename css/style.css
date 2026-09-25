@@ -474,17 +474,17 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
     font-size: 0.88rem !important;
   }
 
-  /* --- Cart සහ Login බටන් එකම ප්‍රමාණයට සහ මධ්‍යගතව පෙන්වීමට CSS සැකසුම --- */
+  /* --- Cart සහ Login බටන් එකම පේළියක මධ්‍යගතව පෙන්වීමට සැකසුම --- */
   .nav-actions-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 10px !important;
     width: 85% !important;
     margin: 4px auto !important;
   }
 
-/* 1. Cart බටන් එක සඳහා පමණක් අදාළ සැකසුම */
+  /* 1. Mobile එකේ Cart බටන් එක සඳහා සැකසුම */
   header nav .cart-icon-btn {
     display: inline-flex !important;
     justify-content: center !important;
@@ -503,16 +503,16 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
     box-sizing: border-box;
   }
 
-  /* Login button eka text ekata galapena widihata (fit wenna) hadaneema */
+  /* 2. Mobile එකේ Login බටන් එක text එකට ගැලපෙන ලෙස (auto width) සැකසීම */
   header nav .nav-login-btn {
     display: inline-flex !important;
     justify-content: center !important;
     align-items: center !important;
-    width: auto !important;             /* Text ekata witharak ida ganeema sadaha auto daanna */
-    min-width: 100px !important;        /* Aduma tharama palala pramanayak */
-    padding: 0.45rem 1rem !important;   /* Padding eka wadi karala button eka loku kara ganna puluwan */
+    width: auto !important;             
+    min-width: 90px !important;         
+    padding: 0.45rem 0.8rem !important;   
     margin: 0 !important;
-    font-size: 0.9rem !important;       /* Methanin text size eka wadi karanna (Uda: 0.9rem or 1rem) */
+    font-size: 0.9rem !important;       
     font-weight: 700 !important;
     border-radius: 8px !important;
     background: rgba(255, 215, 0, 0.15);
@@ -529,7 +529,7 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
     transform: translateY(-2px);
   }
 
-  /* ඩෙස්ක්ටොප් තිර සඳහා බොත්තම සඟවා තබයි */
+  /* අනෙකුත් මෝබයිල් කන්ටේනර් සැකසුම් */
   .riu-btn-container {
     display: flex;
     justify-content: center;
