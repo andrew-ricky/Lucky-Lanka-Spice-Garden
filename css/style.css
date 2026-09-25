@@ -87,6 +87,7 @@ nav a:hover, nav a.active {
   border-radius: 20px !important;
   transition: all 0.3s ease;
   width: auto !important;
+  text-decoration: none;
 }
 
 .cart-icon-btn:hover {
@@ -473,15 +474,38 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
     font-size: 0.88rem !important;
   }
 
-  /* Cart Icon එක මෙනුව තුළ මධ්‍යගතව සහ නිවැරදි ප්‍රමාණයෙන් පෙන්වීමට */
-  header nav .cart-icon-btn {
+  /* --- Cart සහ Login බටන් එක ළඟ එකම පේළියක පෙන්වීමට CSS සැකසුම --- */
+  .nav-actions-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 85% !important;
+    margin: 2px auto !important;
+  }
+
+  /* Cart බටන් එක සහ Login බටන් එකට එකම හැඩය ලබා දීම */
+  header nav .cart-icon-btn,
+  header nav .nav-login-btn {
     display: inline-flex !important;
     justify-content: center !important;
     align-items: center !important;
-    width: 85% !important;
-    max-width: 250px;
-    padding: 0.35rem 0.8rem !important;
-    margin: 2px auto !important;
+    width: 48% !important;
+    padding: 0.35rem 0.5rem !important;
+    margin: 0 !important;
+    font-size: 0.85rem !important;
+    border-radius: 20px !important;
+    background: rgba(255, 215, 0, 0.1);
+    color: var(--accent) !important;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    text-decoration: none;
+    box-sizing: border-box;
+  }
+
+  header nav .cart-icon-btn:hover,
+  header nav .nav-login-btn:hover {
+    background: rgba(255, 215, 0, 0.25) !important;
+    transform: scale(1.02);
   }
 
   /* ඩෙස්ක්ටොප් තිර සඳහා බොත්තම සඟවා තබයි */
