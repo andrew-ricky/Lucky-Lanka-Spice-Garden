@@ -28,7 +28,7 @@ header {
   backdrop-filter: blur(10px);
   color: var(--white);
   padding: 1rem 1.5rem;
-  position: fixed; /* Scroll කළත් උඩම ස්ථාවරව තිබීමට fixed කරන ලදී */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -76,7 +76,7 @@ nav a:hover, nav a.active {
   background: rgba(255, 255, 255, 0.08);
 }
 
-/* --- ඩෙස්ක්ටොප් සහ ලැප්ටොප් තිරවලදී Cart සහ Login එකම පේළියක පෙන්වීමට (Global / Default) --- */
+/* --- ඩෙස්ක්ටොප් සහ ලැප්ටොප් තිරවලදී Cart සහ Login සැකසුම --- */
 .nav-actions-row {
   display: inline-flex !important;
   justify-content: center !important;
@@ -122,7 +122,7 @@ header nav .cart-icon-btn {
   display: none;
 }
 
-/* 2. Login බටන් එක text එකට ගැලපෙන ලෙස (auto width) සැකසීම */
+/* 2. Login බටන් එක සඳහා සැකසුම */
 header nav .nav-login-btn {
   display: inline-flex !important;
   justify-content: center !important;
@@ -154,7 +154,7 @@ header nav .nav-login-btn:hover {
   height: 55vh;
   min-height: 420px;
   overflow: hidden;
-  margin-top: 70px; /* Fixed header එක යටින් content නොවැසීමට ඉඩ ලබා දීම */
+  margin-top: 70px;
 }
 
 .hero-bg {
@@ -200,7 +200,7 @@ h2 { font-size: 2rem; color: var(--primary); font-weight: 700; margin-bottom: 1r
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
 
-/* Product Grid (4 Columns Layout) */
+/* Product Grid */
 .products-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -253,14 +253,11 @@ h2 { font-size: 2rem; color: var(--primary); font-weight: 700; margin-bottom: 1r
   margin-top: auto;
 }
 
-/* Section Controls */
 .welcome-section, .safety-section, .products-section { padding: 4rem 0; }
 .safety-section { background: #EBF2ED; }
 
 /* Remedies Section */
-.remedies-section {
-  padding: 4rem 0;
-}
+.remedies-section { padding: 4rem 0; }
 
 .remedies-grid {
   display: grid;
@@ -277,15 +274,7 @@ h2 { font-size: 2rem; color: var(--primary); font-weight: 700; margin-bottom: 1r
   display: flex;
   flex-direction: column;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
-  
-  animation: modernFadeUp linear forwards;
-  animation-timeline: view();
-  animation-range: entry 15% cover 35%;
 }
-
-.remedy-card:nth-child(1) { animation-delay: 0s; }
-.remedy-card:nth-child(2) { animation-delay: 0.15s; }
-.remedy-card:nth-child(3) { animation-delay: 0.3s; }
 
 .remedy-card:hover {
   transform: translateY(-10px);
@@ -315,18 +304,6 @@ h2 { font-size: 2rem; color: var(--primary); font-weight: 700; margin-bottom: 1r
   margin: 0;
 }
 
-@keyframes modernFadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(50px) scale(0.96);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* Badges & Links */
 .badge { 
   background: var(--accent); 
   color: var(--dark); 
@@ -361,7 +338,6 @@ h2 { font-size: 2rem; color: var(--primary); font-weight: 700; margin-bottom: 1r
 
 .image-box img:hover { transform: scale(1.02); }
 
-/* Buttons - Centered text & flex setup */
 button, .btn, .btn-light { 
   background: var(--primary); 
   color: white; 
@@ -392,72 +368,25 @@ button:hover, .btn:hover {
 
 .btn-light:hover { background: var(--accent-hover); }
 
-/* Footer */
 footer { background: var(--dark); color: #94A3B8; padding: 4rem 0 2rem; margin-top: 2rem; }
 footer h3 { color: var(--accent); margin-bottom: 1rem; font-weight: 600; }
 footer a { color: #94A3B8; text-decoration: none; transition: color 0.3s; }
 footer a:hover { color: var(--accent); }
 
-/* Tables & Forms */
 table { width: 100%; border-collapse: collapse; background: white; margin-top: 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
 th, td { padding: 0.8rem; text-align: left; border-bottom: 1px solid #ddd; }
 th { 
   background: #0b3f1f !important; 
   background-image: none !important; 
   color: white; 
-  border-radius: 0 !important; 
 }
 input[type="number"], input[type="text"], input[type="password"], textarea { padding: 0.6rem; width: 100%; margin-bottom: 0.8rem; border: 1px solid #ccc; border-radius: 4px; }
 
-/* Responsive adjustments */
 @media (max-width: 992px) {
   .products-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (max-width: 768px) {
-  .grid-2, .grid-3, .remedies-grid { grid-template-columns: 1fr; }
-  .hero { height: 50vh; }
-  nav { gap: 0.3rem; }
-  nav a { font-size: 0.85rem; padding: 0.2rem 0.4rem; }
-}
-
-@media (max-width: 576px) {
-  .products-grid { grid-template-columns: 1fr; }
-}
-
-.card-details-box {
-  background: #f1f5f9;
-  padding: 1.2rem;
-  border-radius: 10px;
-  border: 1px solid #e2e8f0;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-}
-.card-details-box h3 {
-  font-size: 1.1rem;
-  color: var(--primary);
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-.card-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
-@media (max-width: 480px) {
-  .card-row { grid-template-columns: 1fr; }
-  header { padding: 0.8rem 1rem; }
-  header .logo { font-size: 1.3rem; }
-  h2 { font-size: 1.6rem; }
-  .container { padding: 0 0.8rem; }
-  table { display: block; overflow-x: auto; }
-}
-
-/* --- Mobile Hamburger Menu & Sticky Button Styles --- */
-
+/* --- Mobile Menu & Sticky Button Styles --- */
 .menu-toggle {
   display: none;
   font-size: 1.6rem;
@@ -465,13 +394,11 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
   cursor: pointer;
 }
 
-/* ඩෙස්ක්ටොප් එකේදී මෙම බටන් කන්ටේනරය සම්පූර්ණයෙන්ම සඟවා තැබීම */
 .riu-btn-container,
 .mobile-sticky-btn-container {
   display: none !important;
 }
 
-/* Mobile View (Screen size 768px හෝ අඩු නම්) */
 @media screen and (max-width: 768px) {
   .header-container {
     flex-direction: row;
@@ -484,7 +411,6 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
     display: block;
   }
 
-  /* Dropdown Menu එක සංයුක්තව සහ උසින් අඩුවෙන් පෙන්වීම සඳහා */
   nav {
     display: none;
     flex-direction: column;
@@ -505,7 +431,6 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
     display: flex;
   }
 
-  /* මෙනුවේ ලින්ක් අතර ඉඩ සහ ප්‍රමාණය කුඩා කර ඇත */
   nav a {
     width: 85%;
     text-align: center;
@@ -514,31 +439,38 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
     font-size: 0.88rem !important;
   }
 
-  /* Mobile මෙනුව ඇතුළේ Cart සහ Login බටන් දෙක එකම පළලකට සැකසීම */
+  /* --- Mobile මෙනුව ඇතුළේ Cart සහ Login බටන් දෙක එකම පළලකට සහ සමව සැකසීම --- */
   .nav-actions-row {
     display: flex !important;
+    flex-direction: row !important;
     justify-content: space-between !important;
-    align-items: center !important;
+    align-items: stretch !important;
     gap: 10px !important;
     width: 85% !important;
-    margin: 4px auto !important;
+    margin: 6px auto !important;
+  }
+
+  #auth-menu-item {
+    display: flex !important;
+    flex: 1 1 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   header nav .cart-icon-btn,
   header nav .nav-login-btn {
     flex: 1 1 0 !important;
-    width: 50% !important;
+    width: 100% !important;
     max-width: none !important;
     min-width: 0 !important;
-    display: inline-flex !important;
-    text-align: center !important;
+    display: flex !important;
     justify-content: center !important;
     align-items: center !important;
     box-sizing: border-box !important;
     padding: 0.4rem 0.5rem !important;
   }
 
-  /* Mobile එකේදී පමණක් View Products බටන් එක පෙන්වීම */
   .riu-btn-container,
   .mobile-sticky-btn-container {
     display: flex !important;
@@ -593,4 +525,13 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
     padding-right: 15px !important;
     box-sizing: border-box;
   }
+}
+
+@media (max-width: 480px) {
+  .card-row { grid-template-columns: 1fr; }
+  header { padding: 0.8rem 1rem; }
+  header .logo { font-size: 1.3rem; }
+  h2 { font-size: 1.6rem; }
+  .container { padding: 0 0.8rem; }
+  table { display: block; overflow-x: auto; }
 }
