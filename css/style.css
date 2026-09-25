@@ -497,7 +497,7 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
     display: inline-block;
     width: auto;         /* සම්පූර්ණ පළල වෙනුවට ටෙක්ස්ට් එකට පමණක් සීමා වේ */
     min-width: 150px;    /* අවම පළල */
-    background-color: linear-gradient(90deg, #0e2d1b 0%, #194228 50%, #1c6736 100%); /* රතු පාට වර්ණය */
+    background: linear-gradient(135deg, #2D6A4F, #52B788);
     color: #ffffff;
     text-align: center;
     padding: 12px 28px;  /* බොත්තමේ ප්‍රමාණය පාලනය කිරීමට */
