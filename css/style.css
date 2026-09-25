@@ -79,12 +79,14 @@ nav a:hover, nav a.active {
   position: relative;
   font-size: 1.1rem;
   color: var(--accent) !important;
-  display: flex;
+  display: inline-flex;
+  justify-content: center;
   align-items: center;
-  padding: 0.4rem 0.8rem !important;
+  padding: 0.4rem 1.2rem !important;
   background: rgba(255, 215, 0, 0.1);
   border-radius: 20px !important;
   transition: all 0.3s ease;
+  width: auto !important;
 }
 
 .cart-icon-btn:hover {
@@ -320,7 +322,7 @@ h2 { font-size: 2rem; color: var(--primary); font-weight: 700; margin-bottom: 1r
 
 .image-box img:hover { transform: scale(1.02); }
 
-/* Buttons */
+/* Buttons - Centered text & flex setup */
 button, .btn, .btn-light { 
   background: var(--primary); 
   color: white; 
@@ -329,7 +331,9 @@ button, .btn, .btn-light {
   border-radius: 8px; 
   cursor: pointer; 
   text-decoration: none; 
-  display: inline-block; 
+  display: inline-flex; 
+  align-items: center;
+  justify-content: center;
   transition: all 0.3s ease; 
   font-weight: 700; 
   text-align: center;
@@ -439,7 +443,7 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
     display: block;
   }
 
-  /* Dropdown Menu එක සංයුක්තව සහ උසින් අඩුවෙන් පෙන්වීම සඳහා සකස් කර ඇත */
+  /* Dropdown Menu එක සංයුක්තව සහ උසින් අඩුවෙන් පෙන්වීම සඳහා */
   nav {
     display: none;
     flex-direction: column;
@@ -469,8 +473,14 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
     font-size: 0.88rem !important;
   }
 
+  /* Cart Icon එක මෙනුව තුළ මධ්‍යගතව සහ නිවැරදි ප්‍රමාණයෙන් පෙන්වීමට */
   header nav .cart-icon-btn {
-    padding: 0.3rem 0.8rem !important;
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 85% !important;
+    max-width: 250px;
+    padding: 0.35rem 0.8rem !important;
     margin: 2px auto !important;
   }
 
@@ -489,7 +499,9 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
   }
 
   .riu-btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: auto;         
     min-width: 200px;    
     background: linear-gradient(90deg, #0e2d1b 0%, #194228 50%, #1c6736 100%);
