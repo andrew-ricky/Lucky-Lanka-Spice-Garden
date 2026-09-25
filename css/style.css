@@ -523,10 +523,13 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
 
   header nav .cart-icon-btn,
   header nav .nav-login-btn {
-    width: auto !important;
-    flex: 1 !important;
+    flex: none !important;
+    width: calc(50% - 5px) !important;
+    max-width: calc(50% - 5px) !important;
     min-width: 0 !important;
     padding: 0.4rem 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
     text-align: center;
   }
 
