@@ -482,14 +482,11 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
 @media screen and (max-width: 768px) {
   .mobile-bottom-fixed-btn-container {
     display: block;
-    position: fixed;
-    bottom: 0;
-    left: 0;
     width: 100%;
-    z-index: 9999;
-    background-color: rgba(13, 22, 16, 0.95); /* වෙබ් අඩවියේ පසුබිම් වර්ණයට ගැළපෙන සේ */
-    padding: 10px 15px;
-    box-shadow: 0 -4px 15px rgba(0,0,0,0.4);
+    padding: 15px;
+    background: transparent;
+    text-align: center;
+    position: relative; /* Fixed වෙනුවට Relative භාවිතා කරයි */
   }
 
   .mobile-bottom-fixed-btn {
@@ -506,9 +503,13 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
     box-shadow: 0 4px 10px rgba(230, 57, 70, 0.3);
   }
 
-  /* පිටුවේ යටම ඇති අන්තර්ගතය බොත්තමට යට වී වැසී යාම වැළැක්වීමට ඉඩ තැබීම */
+  /* අමතර Padding ඉවත් කරනු ලැබේ */
   body {
-    padding-bottom: 80px;
+    padding-bottom: 0;
   }
 }
+
+
+
+  
 }
