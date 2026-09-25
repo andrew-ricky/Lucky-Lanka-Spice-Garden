@@ -481,27 +481,27 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
     display: block;
   }
 
-  /* Dropdown Menu එක fixed කර scroll වන විටත් තිරය මත රැඳී සිටීමට සැලස්වීම */
+  /* Dropdown Menu එක scroll කරන විටත් ස්ථාවරව සහ නිවැරදිව ක්‍රියාත්මක වීමට */
   nav {
     display: none;
     flex-direction: column;
     width: 100%;
     background: linear-gradient(90deg, #07170e 0%, #0f2d1a 100%);
-    position: fixed; /* absolute වෙනුවට fixed යොදන ලදී */
-    top: 65px; /* Header එකේ උසට අනුව සකසා ඇත */
+    position: fixed;
+    top: 60px;
     left: 0;
-    padding: 1rem 0;
-    max-height: calc(100vh - 65px);
-    overflow-y: auto; /* ලින්ක් වැඩි නම් scroll කර බැලීමට හැක */
+    height: calc(100vh - 60px); /* සම්පූර්ණ තිරයේ උස ලබා දීම */
+    overflow-y: auto; 
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
     border-bottom: 2px solid var(--accent);
     align-items: center;
     gap: 0.5rem;
-    z-index: 1000;
+    z-index: 99999; /* z-index අගය ඉතා ඉහළ මට්ටමක තැබීම */
+    -webkit-overflow-scrolling: touch; /* iOS සෆාරි සඳහා smooth scroll කිරීම */
   }
 
   nav.active {
-    display: flex;
+    display: flex !important;
   }
 
   /* මෙනුවේ ලින්ක් අතර ඉඩ සහ ප්‍රමාණය කුඩා කර ඇත */
