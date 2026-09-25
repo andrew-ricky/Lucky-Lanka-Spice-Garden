@@ -224,10 +224,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const navMenu = document.querySelector('header nav');
 
   if (mobileMenuToggle && navMenu) {
-    mobileMenuToggle.addEventListener('click', () => {
+    mobileMenuToggle.addEventListener('click', (e) => {
+      e.stopPropagation(); // Event bubbling වැළැක්වීමට
       navMenu.classList.toggle('active');
       
-      // Icon එක Bars වල සිට Close (X) සලකුණට මාරු කිරීම සඳහා
       const icon = mobileMenuToggle.querySelector('i');
       if (icon) {
         if (navMenu.classList.contains('active')) {
@@ -240,17 +240,16 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // මෙනු එකේ ඕනෑම ලිංක් එකක් ක්ලික් කළ විට මෙනු එක නැවත Closed වීම
-    const navLinks = navMenu.querySelectorAll('a');
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
+    // පිටුවේ වෙනත් තැනක ක්ලික් කළහොත් මෙනුව වැසී යාමට
+    document.addEventListener('click', (e) => {
+      if (!navMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
         navMenu.classList.remove('active');
         const icon = mobileMenuToggle.querySelector('i');
         if (icon) {
           icon.classList.remove('fa-times');
           icon.classList.add('fa-bars');
         }
-      });
+      }
     });
   }
 });
