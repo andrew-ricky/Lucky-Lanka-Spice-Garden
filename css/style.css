@@ -513,6 +513,10 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
   body {
     padding-bottom: 90px;
   }
+
+  footer {
+    padding-bottom: 40px; /* ෆුටර් එක ඇතුළේද යටින් අමතර ඉඩක් තබා ඇත */
+  }
 }
 
   /* ----------------------------------------------- */
