@@ -514,4 +514,23 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
 
 
   
+/* මෝබයිල් තිරවල content එක screen එකෙන් එළියට පැනීම වැළැක්වීම */
+@media screen and (max-width: 768px) {
+  html, body {
+    width: 100%;
+    overflow-x: hidden; /* තිරයෙන් පිටතට ඇදී යාම නතර කරයි */
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    box-sizing: border-box;
+  }
+}
+
+
 }
