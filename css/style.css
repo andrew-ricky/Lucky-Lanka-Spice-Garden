@@ -414,3 +414,91 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
   .container { padding: 0 0.8rem; }
   table { display: block; overflow-x: auto; }
 }
+
+/* --- Mobile Hamburger Menu & Sticky Button Styles --- */
+
+/* Default එකအနေով Desktop එකේදී Hamburger icon සහ Sticky button නොපෙන්වයි */
+.menu-toggle {
+  display: none;
+  font-size: 1.6rem;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.mobile-sticky-btn-container {
+  display: none;
+}
+
+/* Mobile View (Screen size 768px හෝ අඩු නම්) සඳහා පමණක් ක්‍රියාත්මක වේ */
+@media screen and (max-width: 768px) {
+  .header-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  /* මෙනු එක සාමාන්‍යයෙන් සඟවා තබා, active වූ විට පහළට විවෘත වන සේ සැකසීම */
+  nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: linear-gradient(90deg, #07170e 0%, #0f2d1a 100%);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 1.2rem 0;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    border-bottom: 2px solid var(--accent);
+    align-items: center;
+    gap: 0.8rem;
+    z-index: 1000;
+  }
+
+  /* JavaScript හර 'active' class එක එකතු වූ විට මෙනු එක පෙන්වයි */
+  nav.active {
+    display: flex;
+  }
+
+  nav a {
+    width: 80%;
+    text-align: center;
+    padding: 0.6rem;
+    font-size: 1rem;
+  }
+
+/* Default එකအနေով Desktop එකේදී මෙය නොපෙන්වයි */
+.mobile-full-btn-container {
+  display: none;
+}
+
+
+
+/* Mobile view එක සඳහා පමණක් (768px හෝ අඩු screen වලදී) */
+@media screen and (max-width: 768px) {
+  .mobile-full-btn-container {
+    display: block;
+    width: 100%;
+    padding: 10px 15px; /* තිරයේ දෙපැත්තට ඉඩ තබා ගැනීමට */
+    background: transparent; /* අමතර පසුබිම් වර්ණ ඉවත් කරයි */
+  }
+
+  .mobile-full-btn {
+    display: block;
+    width: 100%;
+    background-color: #E63946; /* පින්තූරයේ ඇති ආකාරයේ රතු පාට */
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 8px; /* මෘදු වටකුරු හැඩයක් ලබා දීමට */
+    box-shadow: 0 4px 10px rgba(230, 57, 70, 0.3);
+  }
+}
+}
