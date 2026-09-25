@@ -27,7 +27,7 @@ header {
   background: linear-gradient(90deg, #07170e 0%, #0f2d1a 50%, #163822 100%);
   backdrop-filter: blur(10px);
   color: var(--white);
-  padding: 1rem 1.5rem;
+  padding: 0.5rem 1.5rem; /* Padding එක අඩු කර හෙඩර් එක සංයුක්ත (compact) කර ඇත */
   position: fixed;
   top: 0;
   left: 0;
