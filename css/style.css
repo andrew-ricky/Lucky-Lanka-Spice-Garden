@@ -508,7 +508,7 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
 
   /* පිටුවේ අන්තර්ගතය බොත්තමට යට වීම වැළැක්වීමට පහළින් ඉඩ තැබීම */
   body {
-    padding-bottom: 90px;
+    padding-bottom: 70px;
   }
 }
 
