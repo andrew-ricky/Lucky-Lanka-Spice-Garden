@@ -237,7 +237,6 @@ h2 { font-size: 2rem; color: var(--primary); font-weight: 700; margin-bottom: 1r
   flex-direction: column;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
   
-  /* Modern fade slide up animation */
   animation: modernFadeUp linear forwards;
   animation-timeline: view();
   animation-range: entry 15% cover 35%;
@@ -274,7 +273,7 @@ h2 { font-size: 2rem; color: var(--primary); font-weight: 700; margin-bottom: 1r
   font-weight: 700;
   margin: 0;
 }
-/* Keyframe for modern smooth fade & slide animation */
+
 @keyframes modernFadeUp {
   0% {
     opacity: 0;
@@ -360,10 +359,10 @@ footer a:hover { color: var(--accent); }
 table { width: 100%; border-collapse: collapse; background: white; margin-top: 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
 th, td { padding: 0.8rem; text-align: left; border-bottom: 1px solid #ddd; }
 th { 
-  background: #0b3f1f !important; /* ඔබට අවශ්‍ය තනි තද කොළ පාටේ කෝඩ් එක මෙහි දමන්න */
+  background: #0b3f1f !important; 
   background-image: none !important; 
   color: white; 
-  border-radius: 0 !important; /* වම්පස හෝ දකුණුපස වටකුරු හැඩය ඉවත් කිරීමට මෙය උදව් වේ */
+  border-radius: 0 !important; 
 }
 input[type="number"], input[type="text"], input[type="password"], textarea { padding: 0.6rem; width: 100%; margin-bottom: 0.8rem; border: 1px solid #ccc; border-radius: 4px; }
 
@@ -375,7 +374,7 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
 @media (max-width: 768px) {
   .grid-2, .grid-3, .remedies-grid { grid-template-columns: 1fr; }
   .hero { height: 50vh; }
-  nav { gap: 0.5rem; }
+  nav { gap: 0.3rem; }
   nav a { font-size: 0.85rem; padding: 0.2rem 0.4rem; }
 }
 
@@ -405,7 +404,6 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
   gap: 1rem;
 }
 
-/* Extra mobile fixes for smaller screens */
 @media (max-width: 480px) {
   .card-row { grid-template-columns: 1fr; }
   header { padding: 0.8rem 1rem; }
@@ -417,7 +415,6 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
 
 /* --- Mobile Hamburger Menu & Sticky Button Styles --- */
 
-/* Default එකအနေով Desktop එකේදී Hamburger icon සහ Sticky button නොපෙන්වයි */
 .menu-toggle {
   display: none;
   font-size: 1.6rem;
@@ -429,7 +426,7 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
   display: none;
 }
 
-/* Mobile View (Screen size 768px හෝ අඩු නම්) සඳහා පමණක් ක්‍රියාත්මක වේ */
+/* Mobile View (Screen size 768px හෝ අඩු නම්) */
 @media screen and (max-width: 768px) {
   .header-container {
     flex-direction: row;
@@ -442,7 +439,7 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
     display: block;
   }
 
-  /* මෙනු එක සාමාන්‍යයෙන් සඟවා තබා, active වූ විට පහළට විවෘත වන සේ සැකසීම */
+  /* Dropdown Menu එක සංයුක්තව සහ උසින් අඩුවෙන් පෙන්වීම සඳහා සකස් කර ඇත */
   nav {
     display: none;
     flex-direction: column;
@@ -451,81 +448,73 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
     position: absolute;
     top: 100%;
     left: 0;
-    padding: 1.2rem 0;
+    padding: 0.6rem 0;
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
     border-bottom: 2px solid var(--accent);
     align-items: center;
-    gap: 0.8rem;
+    gap: 0.3rem;
     z-index: 1000;
   }
 
-  /* JavaScript හර 'active' class එක එකතු වූ විට මෙනු එක පෙන්වයි */
   nav.active {
     display: flex;
   }
 
+  /* මෙනුවේ ලින්ක් අතර ඉඩ සහ ප්‍රමාණය කුඩා කර ඇත */
   nav a {
-    width: 80%;
+    width: 85%;
     text-align: center;
-    padding: 0.6rem;
-    font-size: 1rem;
+    padding: 0.35rem 0.5rem !important;
+    margin: 1px 0 !important;
+    font-size: 0.88rem !important;
   }
 
-/* ----------------------------------------------- */
+  header nav .cart-icon-btn {
+    padding: 0.3rem 0.8rem !important;
+    margin: 2px auto !important;
+  }
 
-/* ඩෙස්ක්ටොප් තිර සඳහා මෙම බොත්තම සඟවා තබයි */
-.riu-btn-container {
-  display: none;
-}
-
-/* ජංගම දුරකථන තිර සඳහා පමණක් (තිරයේ පළල 768px හෝ අඩු නම්) */
-@media screen and (max-width: 768px) {
+  /* ඩෙස්ක්ටොප් තිර සඳහා බොත්තම සඟවා තබයි */
   .riu-btn-container {
     display: flex;
-    justify-content: center; /* තිරයේ මැදට ගැනීමට */
+    justify-content: center;
     position: fixed;
-    bottom: 25px; /* දුරකථනයේ නැවිගේශන් බටන් වලට ඉඩ තබා ඇත */
+    bottom: 25px;
     left: 0;
     width: 100%;
     z-index: 9999;
     padding: 0 15px;
     background: transparent;
-    pointer-events: none; /* බොත්තම නැති හිස් අවකාශය ක්ලික් වීම වැළැක්වීමට */
+    pointer-events: none;
   }
 
   .riu-btn {
     display: inline-block;
-    width: auto;         /* සම්පූර්ණ පළල වෙනුවට ටෙක්ස්ට් එකට පමණක් සීමා වේ */
-    min-width: 200px;    /* අවම පළල */
-    background: linear-gradient(90deg, #0e2d1b 0%, #194228 50%, #1c6736 100%); /* වෙබ් අඩවියේ ඇති Deep Natural Green ග්‍රේඩියන්ට් වර්ණය */
+    width: auto;         
+    min-width: 200px;    
+    background: linear-gradient(90deg, #0e2d1b 0%, #194228 50%, #1c6736 100%);
     color: #ffffff;
     text-align: center;
-    padding: 12px 28px;  /* බොත්තමේ ප්‍රමාණය පාලනය කිරීමට */
-    font-size: 0.95rem;  /* අකුරු ප්‍රමාණය */
+    padding: 12px 28px;  
+    font-size: 0.95rem;  
     font-weight: 700;
     text-decoration: none;
-    border-radius: 8px;  /* වටකුරු හැඩය */
+    border-radius: 8px;  
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-    pointer-events: auto; /* බොත්තම ක්ලික් කළ හැකි වන පරිදි */
+    pointer-events: auto; 
   }
 
-  /* පිටුවේ අන්තර්ගතය යටම ඇති බොත්තමට යට වීම වැළැක්වීමට ඉඩ තැබීම */
   body {
     padding-bottom: 90px;
   }
 
   footer {
-    padding-bottom: 100px; /* ෆුටර් එක ඇතුළේද යටින් අමතර ඉඩක් තබා ඇත */
+    padding-bottom: 100px;
   }
-}
 
-  /* ----------------------------------------------- */
-  
-/* මෝබයිල් තිරවල content එක screen එකෙන් එළියට පැනීම වැළැක්වීම */
-@media screen and (max-width: 768px) {
   html, body {
     width: 100%;
-    overflow-x: hidden; /* තිරයෙන් පිටතට ඇදී යාම නතර කරයි */
+    overflow-x: hidden;
     margin: 0;
     padding: 0;
   }
@@ -537,7 +526,4 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
     padding-right: 15px !important;
     box-sizing: border-box;
   }
-}
-
-
 }
