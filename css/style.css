@@ -1,10 +1,10 @@
 :root {
-  --primary: linear-gradient(90deg, #0e2d1b 0%, #194228 50%, #1c6736 100%);      /* Deep Natural Green */
+  --primary: linear-gradient(90deg, #0e2d1b 0%, #194228 50%, #1c6736 100%);
   --primary-light: #1E663B;
-  --accent: #FFD700;       /* High Contrast Gold */
+  --accent: #FFD700;
   --accent-hover: #E6C200;
   --dark: #0D1610;         
-  --light: #FFFFFF;        /* Global body background color */
+  --light: #FFFFFF;
   --white: #ffffff;
   --gray: #64748B;
   --shadow: 0 12px 30px rgba(0,0,0,0.08);
@@ -13,7 +13,6 @@
 * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
 html { scroll-behavior: smooth; }
 
-/* Global body styling */
 body { 
   background-color: var(--light); 
   color: var(--dark); 
@@ -22,7 +21,6 @@ body {
   min-height: 100vh;
 }
 
-/* Header & Nav gradient style */
 header {
   background: linear-gradient(90deg, #07170e 0%, #0f2d1a 50%, #163822 100%);
   backdrop-filter: blur(10px);
@@ -35,13 +33,15 @@ header {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+/* Desktop Header Container Layout */
 .header-container {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  gap: 0.8rem;
+  gap: 1rem;
 }
 
 header .logo { 
@@ -74,15 +74,7 @@ nav a:hover, nav a.active {
   background: rgba(255, 255, 255, 0.08);
 }
 
-/* --- ඩෙස්ක්ටොප් සහ ලැප්ටොප් තිරවලදී Cart සහ Login එකම පේළියක පෙන්වීමට (Global / Default) --- */
-.nav-actions-row {
-  display: inline-flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  gap: 10px !important;
-}
-
-/* 1. Cart බටන් එක සඳහා සැකසුම */
+/* Desktop Cart Button Style */
 header nav .cart-icon-btn {
   position: relative;
   font-size: 1.1rem;
@@ -120,14 +112,14 @@ header nav .cart-icon-btn {
   display: none;
 }
 
-/* 2. Login බටන් එක text එකට ගැලපෙන ලෙස (auto width) සැකසීම */
-header nav .nav-login-btn {
+/* Desktop Login Button Positioned to the Right Corner */
+header .nav-login-btn {
   display: inline-flex !important;
   justify-content: center !important;
   align-items: center !important;
   width: auto !important;             
   min-width: 90px !important;         
-  padding: 0.4rem 1rem !important;   
+  padding: 0.4rem 1.2rem !important;   
   margin: 0 !important;
   font-size: 0.9rem !important;       
   font-weight: 700 !important;
@@ -141,7 +133,7 @@ header nav .nav-login-btn {
   transition: all 0.3s ease;
 }
 
-header nav .nav-login-btn:hover {
+header .nav-login-btn:hover {
   background: rgba(255, 215, 0, 0.3) !important;
   transform: translateY(-2px);
 }
@@ -187,7 +179,6 @@ header nav .nav-login-btn:hover {
   100% { opacity: 0; }
 }
 
-/* Container & Global Layout */
 .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
 .text-center { text-align: center; }
 
@@ -197,7 +188,6 @@ h2 { font-size: 2rem; color: var(--primary); font-weight: 700; margin-bottom: 1r
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
 
-/* Product Grid (4 Columns Layout) */
 .products-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -250,11 +240,9 @@ h2 { font-size: 2rem; color: var(--primary); font-weight: 700; margin-bottom: 1r
   margin-top: auto;
 }
 
-/* Section Controls */
 .welcome-section, .safety-section, .products-section { padding: 4rem 0; }
 .safety-section { background: #EBF2ED; }
 
-/* Remedies Section */
 .remedies-section {
   padding: 4rem 0;
 }
@@ -274,7 +262,6 @@ h2 { font-size: 2rem; color: var(--primary); font-weight: 700; margin-bottom: 1r
   display: flex;
   flex-direction: column;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
-  
   animation: modernFadeUp linear forwards;
   animation-timeline: view();
   animation-range: entry 15% cover 35%;
@@ -313,17 +300,10 @@ h2 { font-size: 2rem; color: var(--primary); font-weight: 700; margin-bottom: 1r
 }
 
 @keyframes modernFadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(50px) scale(0.96);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+  0% { opacity: 0; transform: translateY(50px) scale(0.96); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* Badges & Links */
 .badge { 
   background: var(--accent); 
   color: var(--dark); 
@@ -358,7 +338,6 @@ h2 { font-size: 2rem; color: var(--primary); font-weight: 700; margin-bottom: 1r
 
 .image-box img:hover { transform: scale(1.02); }
 
-/* Buttons - Centered text & flex setup */
 button, .btn, .btn-light { 
   background: var(--primary); 
   color: white; 
@@ -389,13 +368,11 @@ button:hover, .btn:hover {
 
 .btn-light:hover { background: var(--accent-hover); }
 
-/* Footer */
 footer { background: var(--dark); color: #94A3B8; padding: 4rem 0 2rem; margin-top: 2rem; }
 footer h3 { color: var(--accent); margin-bottom: 1rem; font-weight: 600; }
 footer a { color: #94A3B8; text-decoration: none; transition: color 0.3s; }
 footer a:hover { color: var(--accent); }
 
-/* Tables & Forms */
 table { width: 100%; border-collapse: collapse; background: white; margin-top: 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
 th, td { padding: 0.8rem; text-align: left; border-bottom: 1px solid #ddd; }
 th { 
@@ -406,20 +383,8 @@ th {
 }
 input[type="number"], input[type="text"], input[type="password"], textarea { padding: 0.6rem; width: 100%; margin-bottom: 0.8rem; border: 1px solid #ccc; border-radius: 4px; }
 
-/* Responsive adjustments */
 @media (max-width: 992px) {
   .products-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 768px) {
-  .grid-2, .grid-3, .remedies-grid { grid-template-columns: 1fr; }
-  .hero { height: 50vh; }
-  nav { gap: 0.3rem; }
-  nav a { font-size: 0.85rem; padding: 0.2rem 0.4rem; }
-}
-
-@media (max-width: 576px) {
-  .products-grid { grid-template-columns: 1fr; }
 }
 
 .card-details-box {
@@ -444,17 +409,6 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
   gap: 1rem;
 }
 
-@media (max-width: 480px) {
-  .card-row { grid-template-columns: 1fr; }
-  header { padding: 0.8rem 1rem; }
-  header .logo { font-size: 1.3rem; }
-  h2 { font-size: 1.6rem; }
-  .container { padding: 0 0.8rem; }
-  table { display: block; overflow-x: auto; }
-}
-
-/* --- Mobile Hamburger Menu & Sticky Button Styles --- */
-
 .menu-toggle {
   display: none;
   font-size: 1.6rem;
@@ -466,7 +420,7 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
   display: none;
 }
 
-/* Mobile View (Screen size 768px හෝ අඩු නම්) */
+/* Mobile View (Screen size 768px or less) */
 @media screen and (max-width: 768px) {
   .header-container {
     flex-direction: row;
@@ -479,7 +433,6 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
     display: block;
   }
 
-  /* Dropdown Menu එක සංයුක්තව සහ උසින් අඩුවෙන් පෙන්වීම සඳහා */
   nav {
     display: none;
     flex-direction: column;
@@ -500,7 +453,6 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
     display: flex;
   }
 
-  /* මෙනුවේ ලින්ක් අතර ඉඩ සහ ප්‍රමාණය කුඩා කර ඇත */
   nav a {
     width: 85%;
     text-align: center;
@@ -509,7 +461,7 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
     font-size: 0.88rem !important;
   }
 
-  /* Mobile මෙනුව ඇතුළේ Cart සහ Login එකම පේළියක මධ්‍යගතව තැබීම */
+  /* Mobile menu: Cart and Login buttons side by side */
   .nav-actions-row {
     display: flex !important;
     justify-content: center !important;
@@ -523,9 +475,10 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
   header nav .nav-login-btn {
     width: auto !important;
     flex: 1 !important;
+    padding: 0.45rem 0.5rem !important;
+    font-size: 0.88rem !important;
   }
 
-  /* අනෙකුත් මෝබයිල් කන්ටේනර් සැකසුම් */
   .riu-btn-container {
     display: flex;
     justify-content: center;
