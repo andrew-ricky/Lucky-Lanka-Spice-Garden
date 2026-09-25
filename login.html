@@ -9,9 +9,16 @@
 </head>
 <body>
 
+   <!-- Navigation Bar -->
   <header>
     <div class="header-container">
       <div class="logo">🌿 Lucky Lanka Spice Garden</div>
+
+      <!-- Mobile Menu Toggle Button (Hamburger Icon) -->
+      <div class="menu-toggle" id="mobile-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+
       <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
@@ -21,14 +28,18 @@
         <a href="shipping.html">Shipping</a>
         <a href="contact.html">Contact Us</a>
         <a href="my-orders.html">My Orders</a>
-        <!-- Cart Icon with Badge -->
-        <a href="cart.html" class="cart-icon-btn" title="View Cart">
-          <i class="fas fa-shopping-cart"></i>
-          <span id="cart-count" class="cart-badge">0</span>
-        </a>
-        <!-- Dynamic Login / Account Button -->
-        <div id="auth-menu-item" style="display: inline-block; margin-left: 0.3rem;">
-          <a href="login.html" class="btn" style="padding: 0.35rem 0.9rem; font-size: 0.85rem; background: var(--accent); color: var(--dark); border-radius: 6px; font-weight: 600; text-decoration: none;">Login</a>
+
+        <!-- Cart + Login grouped in one row -->
+        <div class="nav-actions-row">
+          <!-- Cart Icon with Badge -->
+          <a href="cart.html" class="cart-icon-btn" title="View Cart">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count" class="cart-badge">0</span>
+          </a>
+          <!-- Dynamic Login / Account Button -->
+          <div id="auth-menu-item">
+            <a href="login.html" class="nav-login-btn">Login</a>
+          </div>
         </div>
       </nav>
     </div>
