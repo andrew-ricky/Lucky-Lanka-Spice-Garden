@@ -484,7 +484,7 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
     display: flex;
     justify-content: center; /* තිරයේ මැදට ගැනීමට */
     position: fixed;
-    bottom: 55px; /* දුරකථනයේ නැවිගේශන් බටන් වලට ඉඩ තබා ඇත */
+    bottom: 25px; /* දුරකථනයේ නැවිගේශන් බටන් වලට ඉඩ තබා ඇත */
     left: 0;
     width: 100%;
     z-index: 9999;
