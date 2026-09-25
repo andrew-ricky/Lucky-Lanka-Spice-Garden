@@ -103,6 +103,20 @@
       grid-template-columns: 1fr 1fr;
       gap: 1rem;
     }
+    
+    /* Expiry and Month/Year styling block */
+    .expiry-group {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .expiry-group select {
+      flex: 1;
+      padding: 0.8rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      background: #f8fafc;
+    }
   </style>
 </head>
 <body>
@@ -176,14 +190,43 @@
             </div>
 
             <div class="form-group">
-              <label>Card Number</label>
-              <input type="text" id="card-number" required maxlength="19" placeholder="4532 •••• •••• ••••">
+              <label>Card Number (16 Digits)</label>
+              <input type="text" id="card-number" required maxlength="19" placeholder="xxxx xxxx xxxx xxxx">
             </div>
 
             <div class="card-row">
               <div class="form-group">
-                <label>Expiry Date</label>
-                <input type="text" id="card-expiry" required maxlength="5" placeholder="MM/YY">
+                <label>Expiry Date (Month / Year)</label>
+                <div class="expiry-group">
+                  <select id="card-expiry-month" required>
+                    <option value="">Month</option>
+                    <option value="01">01 - Jan</option>
+                    <option value="02">02 - Feb</option>
+                    <option value="03">03 - Mar</option>
+                    <option value="04">04 - Apr</option>
+                    <option value="05">05 - May</option>
+                    <option value="06">06 - Jun</option>
+                    <option value="07">07 - Jul</option>
+                    <option value="08">08 - Aug</option>
+                    <option value="09">09 - Sep</option>
+                    <option value="10">10 - Oct</option>
+                    <option value="11">11 - Nov</option>
+                    <option value="12">12 - Dec</option>
+                  </select>
+                  <select id="card-expiry-year" required>
+                    <option value="">Year</option>
+                    <option value="26">2026</option>
+                    <option value="27">2027</option>
+                    <option value="28">2028</option>
+                    <option value="29">2029</option>
+                    <option value="30">2030</option>
+                    <option value="31">2031</option>
+                    <option value="32">2032</option>
+                    <option value="33">2033</option>
+                    <option value="34">2034</option>
+                    <option value="35">2035</option>
+                  </select>
+                </div>
               </div>
               <div class="form-group">
                 <label>CVV / CVC</label>
@@ -234,6 +277,19 @@
   <script src="js/main.js"></script>
   
   <script>
+    // Format Card Number automatically with spaces every 4 digits
+    document.getElementById('card-number').addEventListener('input', function (e) {
+      let value = e.target.value.replace(/\D/g, '');
+      let formattedValue = '';
+      for (let i = 0; i < value.length; i++) {
+        if (i > 0 && i % 4 === 0) {
+          formattedValue += ' ';
+        }
+        formattedValue += value[i];
+      }
+      e.target.value = formattedValue;
+    });
+
     document.addEventListener('DOMContentLoaded', async () => {
       const { data: { session } } = await supabaseClient.auth.getSession();
       
