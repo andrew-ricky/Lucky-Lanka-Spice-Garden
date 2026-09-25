@@ -509,7 +509,7 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
     justify-content: center !important;
     align-items: center !important;
     width: 48% !important;        /* මෙහි ප්‍රතිශතය අඩු වැඩි කරමින් පළල වෙනස් කළ හැක (උදා: 40% හෝ 55%) */
-    max-width: 160px !important;  /* උපරිම පළල (max-width) වැඩි කර Login බටන් එක විශාල කරගත හැක */
+    max-width: 100px !important;  /* උපරිම පළල (max-width) වැඩි කර Login බටන් එක විශාල කරගත හැක */
     padding: 0.45rem 1rem !important; /* padding එක වෙනස් කිරීමෙන් බටන් එකේ ප්‍රමාණය මارු කළ හැක */
     margin: 0 !important;
     font-size: 0.88rem !important; /* අකුෂුවල ප්‍රමාණය (font-size) වෙනස් කළ හැක */
