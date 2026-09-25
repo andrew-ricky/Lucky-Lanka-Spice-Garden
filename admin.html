@@ -97,6 +97,76 @@
       background: #b91c1c;
       border-left: 4px solid #f87171;
     }
+
+    /* ===== Mobile Fixes for Admin Page ===== */
+    @media screen and (max-width: 768px) {
+      /* Admin page has no hamburger toggle - force nav to always show
+         so the Logout link isn't hidden by the main stylesheet's
+         "nav { display:none }" mobile rule */
+      header nav {
+        display: flex !important;
+        position: static !important;
+        width: auto !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        border-bottom: none !important;
+        padding: 0 !important;
+      }
+      header nav a {
+        width: auto !important;
+      }
+
+      /* Sub-header: stack tabs + admin label, let tabs wrap */
+      .admin-sub-container {
+        flex-direction: column;
+        gap: 0.6rem;
+        align-items: stretch;
+      }
+      .admin-tabs {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.6rem;
+      }
+      .tab-btn {
+        flex: 1;
+        min-width: 45%;
+        font-size: 0.85rem;
+        padding: 0.5rem 0.8rem;
+        text-align: center;
+        justify-content: center;
+      }
+
+      /* Product form: single column on small screens */
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-box {
+        padding: 1.2rem;
+      }
+
+      /* Tables: allow horizontal scroll instead of squashing/overflowing the page */
+      .order-table, .product-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      .order-table td, .product-table td,
+      .order-table th, .product-table th {
+        white-space: nowrap;
+      }
+
+      .admin-container {
+        padding: 0 0.8rem;
+        margin: 1.2rem auto;
+      }
+
+      #toast-notification {
+        left: 10px;
+        right: 10px;
+        top: 10px;
+        font-size: 0.85rem;
+      }
+    }
   </style>
 </head>
 <body>
