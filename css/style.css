@@ -525,6 +525,9 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
   header nav .nav-login-btn {
     width: auto !important;
     flex: 1 !important;
+    min-width: 0 !important;
+    padding: 0.4rem 0 !important;
+    text-align: center;
   }
 
   /* Mobile එකේදී පමණක් View Products බටන් එක පෙන්වීම */
