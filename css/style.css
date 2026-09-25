@@ -490,7 +490,7 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
     justify-content: center !important;
     align-items: center !important;
     width: 48% !important;
-    max-width: 140px !important;
+    max-width: 160px !important;
     padding: 0.45rem 0.5rem !important;
     margin: 0 !important;
     font-size: 0.88rem !important;
