@@ -74,7 +74,7 @@ nav a:hover, nav a.active {
   background: rgba(255, 255, 255, 0.08);
 }
 
-/* ඩෙස්ක්ටොප් සහ ලැප්ටොප් තිරවලදී Cart සහ Login එකම පේළියක පෙන්වීමට (Global / Default) */
+/* --- ඩෙස්ක්ටොප් සහ ලැප්ටොප් තිරවලදී Cart සහ Login එකම පේළියක පෙන්වීමට (Global / Default) --- */
 .nav-actions-row {
   display: inline-flex !important;
   justify-content: center !important;
@@ -481,27 +481,25 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
     display: block;
   }
 
-  /* Dropdown Menu එක scroll කරන විටත් ස්ථාවරව තිරයේ රැඳී සිටීමට */
+  /* Dropdown Menu එක සංයුක්තව සහ උසින් අඩුවෙන් පෙන්වීම සඳහා */
   nav {
     display: none;
     flex-direction: column;
     width: 100%;
     background: linear-gradient(90deg, #07170e 0%, #0f2d1a 100%);
-    position: fixed !important;
-    top: 60px !important;
-    left: 0 !important;
-    height: calc(100vh - 60px) !important;
-    overflow-y: auto !important; 
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 0.6rem 0;
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
     border-bottom: 2px solid var(--accent);
     align-items: center;
-    gap: 0.5rem;
-    z-index: 999999 !important;
-    -webkit-overflow-scrolling: touch;
+    gap: 0.3rem;
+    z-index: 1000;
   }
 
   nav.active {
-    display: flex !important;
+    display: flex;
   }
 
   /* මෙනුවේ ලින්ක් අතර ඉඩ සහ ප්‍රමාණය කුඩා කර ඇත */
@@ -548,8 +546,8 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: auto;          
-    min-width: 200px;     
+    width: auto;         
+    min-width: 200px;    
     background: linear-gradient(90deg, #0e2d1b 0%, #194228 50%, #1c6736 100%);
     color: #ffffff;
     text-align: center;
