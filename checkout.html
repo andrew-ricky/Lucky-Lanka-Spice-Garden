@@ -117,6 +117,38 @@
       font-size: 0.95rem;
       background: #f8fafc;
     }
+
+    /* ===== Mobile Fixes for Checkout Page =====
+       This block must come after the rules above so it wins the cascade
+       and actually overrides the 2-column card-row on small screens. */
+    @media screen and (max-width: 768px) {
+      .checkout-section {
+        padding: 1.5rem 0;
+      }
+      .checkout-wrapper {
+        padding: 1.5rem;
+        border-radius: 12px;
+      }
+      .checkout-wrapper h2 {
+        font-size: 1.4rem;
+      }
+      .card-row {
+        grid-template-columns: 1fr;
+      }
+      .expiry-group {
+        gap: 0.4rem;
+      }
+      .expiry-group select {
+        padding: 0.7rem 0.4rem;
+        font-size: 0.85rem;
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      .checkout-wrapper {
+        padding: 1.1rem;
+      }
+    }
   </style>
 </head>
 <body>
