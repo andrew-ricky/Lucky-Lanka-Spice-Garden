@@ -482,31 +482,40 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
 @media screen and (max-width: 768px) {
   .riu-btn-container {
     display: flex;
-    justify-content: center; /* බොත්තම තිරයේ මැදට ගැනීමට */
-    position: relative;
-    margin-top: 25px;    /* උඩින් ඇති ඉඩ වැඩි කර බොත්තම තව ටිකක් පහළට ගෙන යාමට */
-    margin-bottom: 25px; /* යටින් ඉඩ තබා ගැනීමට */
+    justify-content: center; /* තිරයේ මැදට ගැනීමට */
+    position: fixed;
+    bottom: 55px; /* දුරකථනයේ නැවිගේශන් බටන් වලට ඉඩ තබා ඇත */
+    left: 0;
+    width: 100%;
+    z-index: 9999;
     padding: 0 15px;
     background: transparent;
+    pointer-events: none; /* බොත්තම නැති හිස් අවකාශය ක්ලික් වීම වැළැක්වීමට */
   }
 
   .riu-btn {
     display: inline-block;
-    width: auto;         /* සම්පූර්ණ පළල වෙනුවට ටෙක්ස්ට් එකට පමණක් ගැළපීමට */
-    min-width: 140px;    /* අවම පළල */
-    background-color: linear-gradient(90deg, #0e2d1b 0%, #194228 50%, #1c6736 100%); /* රතු පාට වර්ණය */
+    width: auto;         /* සම්පූර්ණ පළල වෙනුවට ටෙක්ස්ට් එකට පමණක් සීමා වේ */
+    min-width: 150px;    /* අවම පළල */
+    background-color: #E63946; /* රතු පාට වර්ණය */
     color: #ffffff;
     text-align: center;
-    padding: 10px 24px;  /* බොත්තමේ උස සහ පළල පාලනය කිරීමට */
-    font-size: 0.95rem;  /* අකුරු ප්‍රමාණය කුඩා කිරීමට */
+    padding: 12px 28px;  /* බොත්තමේ ප්‍රමාණය පාලනය කිරීමට */
+    font-size: 0.95rem;  /* අකුරු ප්‍රමාණය */
     font-weight: 700;
     text-decoration: none;
-    border-radius: 6px;  /* වටකුරු හැඩය */
-    box-shadow: 0 4px 10px rgba(230, 57, 70, 0.3);
+    border-radius: 8px;  /* වටකුරු හැඩය */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    pointer-events: auto; /* බොත්තම ක්ලික් කළ හැකි වන පරිදි */
+  }
+
+  /* පිටුවේ අන්තර්ගතය යටම ඇති බොත්තමට යට වීම වැළැක්වීමට ඉඩ තැබීම */
+  body {
+    padding-bottom: 90px;
   }
 }
 
-
+  /* ----------------------------------------------- */
   
 /* මෝබයිල් තිරවල content එක screen එකෙන් එළියට පැනීම වැළැක්වීම */
 @media screen and (max-width: 768px) {
