@@ -134,6 +134,35 @@
       .cart-table {
         display: block;
         overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      .cart-table th, .cart-table td {
+        padding: 0.8rem 0.7rem;
+        font-size: 0.85rem;
+        white-space: nowrap;
+      }
+      .cart-table input[type="number"] {
+        width: 55px;
+        padding: 0.3rem;
+      }
+      .cart-table button, .btn-remove {
+        padding: 0.4rem 0.7rem;
+        font-size: 0.85rem;
+      }
+
+      /* Stack Total + Checkout button on narrow screens instead of
+         letting them overflow the card horizontally */
+      .cart-summary {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+      }
+      .cart-summary h3 {
+        text-align: center;
+        font-size: 1.2rem;
+      }
+      .cart-summary button {
+        width: 100%;
       }
     }
   </style>
