@@ -568,9 +568,14 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
     padding-bottom: 100px;
   }
 
+  /* FIX: overflow-x:hidden -> overflow-x:clip
+     "hidden" thibunama header eke position:sticky eka mobile browsers 
+     walin (iOS Safari wage) disable karanawa, ethakota scroll karaddi 
+     header eka top ekata sticky wenne naetuwa "disappear" wenawa. 
+     "clip" use kalama horizontal scroll block wenawa, namuth sticky work karanawa. */
   html, body {
     width: 100%;
-    overflow-x: hidden;
+    overflow-x: clip;
     margin: 0;
     padding: 0;
   }
