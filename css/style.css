@@ -478,26 +478,32 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
 
 
 
-/* Mobile view එක සඳහා පමණක් (768px හෝ අඩු screen වලදී) */
+/* ඩෙස්ක්ටොප් දර්ශනයේදී මෙම බොත්තම නොපෙන්වයි */
+.page-bottom-btn-container {
+  display: none;
+}
+
+/* ජංගම දුරකථන තිර සඳහා පමණක් (තිරයේ පළල 768px හෝ අඩු නම්) */
 @media screen and (max-width: 768px) {
-  .mobile-full-btn-container {
+  .page-bottom-btn-container {
     display: block;
     width: 100%;
-    padding: 10px 15px; /* තිරයේ දෙපැත්තට ඉඩ තබා ගැනීමට */
-    background: transparent; /* අමතර පසුබිම් වර්ණ ඉවත් කරයි */
+    padding: 20px 15px;
+    background: transparent;
+    text-align: center;
   }
 
-  .mobile-full-btn {
+  .page-bottom-btn {
     display: block;
     width: 100%;
-    background-color: #E63946; /* පින්තූරයේ ඇති ආකාරයේ රතු පාට */
+    background-color: #E63946; /* රතු පාට වර්ණය */
     color: #ffffff;
     text-align: center;
     padding: 14px 0;
     font-size: 1.1rem;
     font-weight: 700;
     text-decoration: none;
-    border-radius: 8px; /* මෘදු වටකුරු හැඩයක් ලබා දීමට */
+    border-radius: 8px;
     box-shadow: 0 4px 10px rgba(230, 57, 70, 0.3);
   }
 }
