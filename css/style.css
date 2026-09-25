@@ -517,8 +517,8 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
   /* Mobile මෙනුව ඇතුළේ Cart සහ Login බටන් දෙක එකම පළලකට සැකසීම */
   .nav-actions-row {
     display: flex !important;
-    justify-content: center !important;
-    align-items: stretch !important;
+    justify-content: space-between !important;
+    align-items: center !important;
     gap: 10px !important;
     width: 85% !important;
     margin: 4px auto !important;
@@ -526,12 +526,16 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
 
   header nav .cart-icon-btn,
   header nav .nav-login-btn {
-    flex: 1 !important;
-    width: 100% !important;
+    flex: 1 1 0 !important;
+    width: 50% !important;
+    max-width: none !important;
     min-width: 0 !important;
+    display: inline-flex !important;
     text-align: center !important;
     justify-content: center !important;
+    align-items: center !important;
     box-sizing: border-box !important;
+    padding: 0.4rem 0.5rem !important;
   }
 
   /* Mobile එකේදී පමණක් View Products බටන් එක පෙන්වීම */
