@@ -28,10 +28,8 @@ header {
   backdrop-filter: blur(10px);
   color: var(--white);
   padding: 1rem 1.5rem;
-  position: fixed; /* Scroll කළත් උඩම ස්ථාවරව තිබීමට fixed කරන ලදී */
+  position: sticky;
   top: 0;
-  left: 0;
-  width: 100%;
   z-index: 1000;
   box-shadow: 0 4px 20px rgba(0,0,0,0.15);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -154,7 +152,6 @@ header nav .nav-login-btn:hover {
   height: 55vh;
   min-height: 420px;
   overflow: hidden;
-  margin-top: 70px; /* Fixed header එක යටින් content නොවැසීමට ඉඩ ලබා දීම */
 }
 
 .hero-bg {
@@ -585,9 +582,4 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
     padding-right: 15px !important;
     box-sizing: border-box;
   }
-}
-
-/* උදාහරණයක් ලෙස: */
-body {
-    padding-top: 80px; /* Header එකේ උසට සමාන වන සේ මෙම අගය වෙනස් කරන්න */
 }
