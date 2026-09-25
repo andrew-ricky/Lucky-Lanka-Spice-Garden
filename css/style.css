@@ -474,41 +474,34 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
 /* ----------------------------------------------- */
 
 /* ඩෙස්ක්ටොප් තිර සඳහා මෙම බොත්තම සඟවා තබයි */
-.mobile-bottom-fixed-btn-container {
+.riu-btn-container {
   display: none;
 }
 
 /* ජංගම දුරකථන තිර සඳහා පමණක් (තිරයේ පළල 768px හෝ අඩු නම්) */
 @media screen and (max-width: 768px) {
-  .mobile-bottom-fixed-btn-container {
+  .riu-btn-container {
     display: block;
     width: 100%;
-    padding: 15px;
+    padding: 12px 16px;
     background: transparent;
     text-align: center;
-    position: relative; /* Fixed වෙනුවට Relative භාවිතා කරයි */
   }
 
-  .mobile-bottom-fixed-btn {
+  .riu-btn {
     display: block;
     width: 100%;
     background-color: #E63946; /* රතු පාට වර්ණය */
     color: #ffffff;
     text-align: center;
-    padding: 14px 0;
-    font-size: 1.1rem;
+    padding: 15px 0;
+    font-size: 1.15rem;
     font-weight: 700;
     text-decoration: none;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(230, 57, 70, 0.3);
-  }
-
-  /* අමතර Padding ඉවත් කරනු ලැබේ */
-  body {
-    padding-bottom: 0;
+    box-shadow: 0 4px 12px rgba(230, 57, 70, 0.35);
   }
 }
-
 
 
   
