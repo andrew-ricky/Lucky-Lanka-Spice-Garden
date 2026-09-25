@@ -484,9 +484,8 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
     margin: 4px auto !important;
   }
 
-  /* බොත්තම් දෙකටම එකම පළලක් (width) සහ එකම පෙනුමක් ලබා දීම */
-  header nav .cart-icon-btn,
-  header nav .nav-login-btn {
+/* 1. Cart බටන් එක සඳහා පමණක් අදාළ සැකසුම */
+  header nav .cart-icon-btn {
     display: inline-flex !important;
     justify-content: center !important;
     align-items: center !important;
@@ -495,6 +494,25 @@ input[type="number"], input[type="text"], input[type="password"], textarea { pad
     padding: 0.45rem 0.5rem !important;
     margin: 0 !important;
     font-size: 0.88rem !important;
+    font-weight: 700 !important;
+    border-radius: 8px !important;
+    background: rgba(255, 215, 0, 0.15);
+    color: var(--accent) !important;
+    border: 1px solid rgba(255, 215, 0, 0.4);
+    text-decoration: none;
+    box-sizing: border-box;
+  }
+
+  /* 2. Login බටන් එක සඳහා පමණක් අදාළ සැකසුම (මෙහි size එක වෙනස් කරගත හැක) */
+  header nav .nav-login-btn {
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 48% !important;        /* මෙහි ප්‍රතිශතය අඩු වැඩි කරමින් පළල වෙනස් කළ හැක (උදා: 40% හෝ 55%) */
+    max-width: 160px !important;  /* උපරිම පළල (max-width) වැඩි කර Login බටන් එක විශාල කරගත හැක */
+    padding: 0.45rem 1rem !important; /* padding එක වෙනස් කිරීමෙන් බටන් එකේ ප්‍රමාණය මارු කළ හැක */
+    margin: 0 !important;
+    font-size: 0.88rem !important; /* අකුෂුවල ප්‍රමාණය (font-size) වෙනස් කළ හැක */
     font-weight: 700 !important;
     border-radius: 8px !important;
     background: rgba(255, 215, 0, 0.15);
